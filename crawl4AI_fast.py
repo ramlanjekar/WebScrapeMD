@@ -190,12 +190,12 @@ async def crawl_parallel(urls: List[str], max_concurrent: int = 3):
 
 async def main():
     total_start = time.perf_counter()  # Start timing for everything
-    # doc_url = input("Enter the URL of the documentation main page: ")
-    doc_url=["https://ai.pydantic.dev/multi-agent-applications/#agent-delegation"]
+    doc_url = input("Enter the URL of the documentation main page: ")
+    doc_url=extract_doc_links(doc_url)
     urls = doc_url
     if urls:
         print(f"Found {len(urls)} URLs to crawl")
-        await crawl_parallel(urls, max_concurrent=1)  # Reduced to 5 for better stability
+        await crawl_parallel(urls, max_concurrent=10)  
         
         # Print total time including setup
         total_time = time.perf_counter() - total_start
