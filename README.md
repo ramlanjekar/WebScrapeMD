@@ -24,6 +24,9 @@ cd doc_agent
 ```bash
 pip install -r requirements.txt
 ```
+```bash
+playwright install chromium
+```
 
 ## Usage
 
