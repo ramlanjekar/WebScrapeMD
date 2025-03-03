@@ -45,8 +45,8 @@ python crawl4AI_fast.py
 Key parameters that can be adjusted in `crawl4AI_fast.py`:
 
 - `max_concurrent`: Number of concurrent crawling tasks (default: 10)
-- `excluded_selector`: CSS selectors for elements to exclude
-- `excluded_tags`: HTML tags to exclude from crawling
+- `CrawlerRunConfig`: Content filtering eg: prettify , excluded_selector etc.
+- `BrowserConfig`: Configs the browser enviroment
 
 ## Output
 
@@ -55,6 +55,7 @@ The crawler generates a combined Markdown file in the `output` directory with:
 - Preserved code blocks and formatting
 - Source URL references
 - Clear content separation
+- Links of the content(you can remove it if you want)
 
 ## Performance Metrics
 
@@ -63,15 +64,6 @@ The crawler provides:
 - Total execution time
 - Per-batch timing
 - Success/failure statistics
-
-## Requirements
-
-- Python 3.7+
-- Required packages:
-  - aiohttp
-  - beautifulsoup4
-  - requests
-  - psutil
 
 ## Project Structure
 
